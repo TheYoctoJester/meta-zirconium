@@ -1,0 +1,78 @@
+header:
+  version: 11
+
+distro: poky
+
+defaults:
+  repos:
+    refspec: master
+
+repos:
+  poky:
+    url: https://git.yoctoproject.org/git/poky
+    refspec: dunfell
+    layers:
+      meta:
+      meta-poky:
+      meta-yocto-bsp:
+
+  meta-zephyr:
+    url: https://git.yoctoproject.org/git/meta-zephyr
+    refspec: dunfell
+    layers:
+      meta-zephyr-core:
+      meta-zephyr-bsp:
+
+  meta-openembedded:
+    url: https://git.openembedded.org/meta-openembedded
+    refspec: dunfell
+    layers:
+      meta-oe:
+
+  meta-mender:
+    url: https://github.com/mendersoftware/meta-mender.git
+    refspec: dunfell
+    layers:
+      meta-mender-core:
+
+#  meta-mender-community:
+#    url: https://github.com/mendersoftware/meta-mender-community.git
+#    refspec: dunfell
+#    layers:
+#      meta-mender-toradex-nxp:
+
+  meta-freescale:
+    url: https://github.com/Freescale/meta-freescale.git
+    refspec: dunfell
+
+  meta-freescale-3rdparty:
+    url: https://github.com/Freescale/meta-freescale-3rdparty.git
+    refspec: dunfell
+
+  meta-toradex-bsp-common:
+    url: https://git.toradex.com/meta-toradex-bsp-common.git
+    refspec: dunfell-5.x.y
+
+  meta-toradex-nxp:
+    url: https://git.toradex.com/meta-toradex-nxp.git
+    refspec: dunfell-5.x.y
+  
+  meta-zirconium:
+
+local_conf_header:
+  base: |
+    CONF_VERSION = "1"
+    PACKAGE_CLASSES = "package_ipk"
+    INIT_MANAGER = "systemd"
+    ACCEPT_FSL_EULA = "1" 
+  
+  tmp: |
+    TMPDIR = "${TOPDIR}/tmp-colibri-imx7d"
+
+  multiconfig_m4: |
+    BBMULTICONFIG = "zephyr-m4"
+
+target:
+  - core-image-full-cmdline
+
+machine: colibri-imx7-emmc
