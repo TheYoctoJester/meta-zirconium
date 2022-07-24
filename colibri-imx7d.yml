@@ -77,6 +77,6 @@ local_conf_header:
     BBMULTICONFIG = "zephyr-m4"
 
 target:
-  - core-image-full-cmdline
+  - zirconium-image
 
 machine: colibri-imx7-emmc
