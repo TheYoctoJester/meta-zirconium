@@ -14,7 +14,6 @@ repos:
     layers:
       meta:
       meta-poky:
-      meta-yocto-bsp:
 
   meta-zephyr:
     url: https://git.yoctoproject.org/git/meta-zephyr
@@ -36,11 +35,11 @@ repos:
     layers:
       meta-mender-core:
 
-#  meta-mender-community:
-#    url: https://github.com/mendersoftware/meta-mender-community.git
-#    refspec: dunfell
-#    layers:
-#      meta-mender-toradex-nxp:
+  meta-mender-community:
+    url: https://github.com/mendersoftware/meta-mender-community.git
+    refspec: kirkstone-next
+    layers:
+      meta-mender-toradex-nxp:
 
   meta-freescale:
     url: https://github.com/Freescale/meta-freescale.git
@@ -75,6 +74,9 @@ local_conf_header:
 
   multiconfig_m4: |
     BBMULTICONFIG = "zephyr-m4"
+
+  toradex: |
+    include conf/machine/include/colibri-imx7-emmc.inc
 
 target:
   - zirconium-image
