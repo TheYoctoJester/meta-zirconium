@@ -65,6 +65,7 @@ local_conf_header:
     PACKAGE_CLASSES = "package_ipk"
     INIT_MANAGER = "systemd"
     ACCEPT_FSL_EULA = "1" 
+    EXTRA_IMAGE_FEATURES ?= "debug-tweaks"
   
   tmp: |
     TMPDIR = "${TOPDIR}/tmp-colibri-imx7d"
