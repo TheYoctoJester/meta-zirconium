@@ -36,8 +36,8 @@ repos:
       meta-mender-core:
 
   meta-mender-community:
-    url: https://github.com/mendersoftware/meta-mender-community.git
-    refspec: kirkstone-next
+    url: https://github.com/theyoctojester/meta-mender-community.git
+    refspec: colibri-imx7-emmc_kirkstone
     layers:
       meta-mender-toradex-nxp:
 
