@@ -10,52 +10,61 @@ defaults:
 repos:
   poky:
     url: https://git.yoctoproject.org/git/poky
-    refspec: kirkstone
+#    refspec: kirkstone
+    refspec: 27fde9cc2aeddb9ea964efb4cc2de7c608256777
     layers:
       meta:
       meta-poky:
 
   meta-zephyr:
     url: https://git.yoctoproject.org/git/meta-zephyr
-    refspec: master
+#    refspec: master
+    refspec: e47a5e00b0f130c0022bb8854f029d88f5009e36
     layers:
       meta-zephyr-core:
       meta-zephyr-bsp:
 
   meta-openembedded:
     url: https://git.openembedded.org/meta-openembedded
-    refspec: kirkstone
+#    refspec: kirkstone
+    refspec: a47ef046619d639dfbd3be2a13ef6d5b40fd40a1
     layers:
       meta-oe:
       meta-python:
 
   meta-mender:
     url: https://github.com/mendersoftware/meta-mender.git
-    refspec: master-next
+#    refspec: master-next
+    refspec: 4664d5b7ebaa12dc3ba844843de8dd3d54a0585f
     layers:
       meta-mender-core:
 
   meta-mender-community:
     url: https://github.com/theyoctojester/meta-mender-community.git
-    refspec: colibri-imx7-emmc_kirkstone
+#    refspec: colibri-imx7-emmc_kirkstone
+    refspec: b7eb2bb3716bd8158be81ea1b9c5f06ca7617944
     layers:
       meta-mender-toradex-nxp:
 
   meta-freescale:
     url: https://github.com/Freescale/meta-freescale.git
-    refspec: kirkstone
+#    refspec: kirkstone
+    refspec: 64e2f37bf1f20d9b636de9a7ebd99ac48d35dcd7
 
   meta-freescale-3rdparty:
     url: https://github.com/Freescale/meta-freescale-3rdparty.git
-    refspec: kirkstone
+#    refspec: kirkstone
+    refspec: 82977c3d95fc9ce27b80a2b4440b5eb199a9240e
 
   meta-toradex-bsp-common:
     url: https://git.toradex.com/meta-toradex-bsp-common.git
-    refspec: master
+#    refspec: master
+    refspec: 2636f877f2c136dec023cd85c4ae2c7c7c45eb90
 
   meta-toradex-nxp:
     url: https://git.toradex.com/meta-toradex-nxp.git
-    refspec: master
+#    refspec: master
+    refspec: c43b3a28e9f9c515ec3f084310ce8d12d39a1d36
   
   meta-zirconium:
 
