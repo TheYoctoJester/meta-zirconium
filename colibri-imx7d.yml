@@ -69,15 +69,26 @@ local_conf_header:
   
   tmp: |
     TMPDIR = "${TOPDIR}/tmp-colibri-imx7d"
-  
-  mender: |
-    MENDER_EFI_LOADER = "u-boot"
 
   multiconfig_m4: |
     BBMULTICONFIG = "zephyr-m4"
 
   toradex: |
     include conf/machine/include/colibri-imx7-emmc.inc
+    KBRANCH:pn-linux-toradex-mainline = "linux-5.18.y"
+
+  mender: |
+    INHERIT += "mender-full mender-toradex"
+    MENDER_FEATURES_ENABLE:append = " mender-uboot mender-image mender-image-sd"
+    MENDER_FEATURES_DISABLE:append = " mender-grub mender-image-uefi"
+    IMAGE_CLASSES += "image_type_mender_tezi"
+    IMAGE_FSTYPES:append = " mender_tezi"
+    MENDER_STORAGE_TOTAL_SIZE_MB = "3072"
+    MENDER_ARTIFACT_NAME = "zirconium1"
+    MENDER_STORAGE_DEVICE = "/dev/mmcblk2"
+    TEZI_STORAGE_DEVICE = "mmcblk0"
+    MENDER_UBOOT_STORAGE_INTERFACE = "mmc"
+    MENDER_UBOOT_STORAGE_DEVICE = "0"
 
 target:
   - zirconium-image
