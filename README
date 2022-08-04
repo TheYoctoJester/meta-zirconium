@@ -1,41 +1,53 @@
-This README file contains information on the contents of the meta-zirconium layer.
+Summary
+============
 
-Please see the corresponding sections below for details.
+The `meta-zirconium` layer is a demonstration layer for a Zephyr+Yocto+Mender build in a single setup, leveraging multiconfig and layer mechanisms. It will be presented at [LPC 2022](https://lpc.events/event/16/contributions/1196/)
 
 Dependencies
 ============
 
-  URI: <first dependency>
-  branch: <branch name>
+Note: the branches are partially preliminary. In the [kas](https://github.com/siemens/kas) file, specific commits
+are set to provide reproducibility.
 
-  URI: <second dependency>
-  branch: <branch name>
+  URI: https://git.yoctoproject.org/git/poky
+  branch: kirkstone
 
-  .
-  .
-  .
+  URI: https://git.yoctoproject.org/git/meta-zephyr
+  branch: master / kirkstone
+
+  URI: https://git.openembedded.org/meta-openembedded
+  branch: kirkstone
+
+  URI: https://github.com/mendersoftware/meta-mender.git
+  branch: master-next
+
+  URI: https://github.com/theyoctojester/meta-mender-community.git
+  branch: colibri-imx7-emmc_kirkstone
+
+  URI: https://github.com/Freescale/meta-freescale.git
+  branch: kirkstone
+
+  URI: https://github.com/Freescale/meta-freescale-3rdparty.git
+  branch: kirkstone
+
+  URI: https://git.toradex.com/meta-toradex-bsp-common.git
+  branch: master
+
+  URI: https://git.toradex.com/meta-toradex-nxp.git
+  branch: master
 
 Patches
 =======
 
-Please submit any patches against the meta-zirconium layer to the xxxx mailing list (xxxx@zzzz.org)
-and cc: the maintainer:
+Please submit any patches against the meta-zirconium layer as Github PR against the repository at https://github.com/theyoctojester/meta-zirconium.git
 
-Maintainer: XXX YYYYYY <xxx.yyyyyy@zzzzz.com>
-
-Table of Contents
+Using the layer
 =================
 
-  I. Adding the meta-zirconium layer to your build
- II. Misc
+The file `colibri-imx7d.yml` at the top level provides the build configuration in kas form. It is recommended to build in a subdirectory. Example:
 
-
-I. Adding the meta-zirconium layer to your build
-=================================================
-
-Run 'bitbake-layers add-layer meta-zirconium'
-
-II. Misc
-========
-
---- replace with specific information about the meta-zirconium layer ---
+```
+mkdir build-zirconium
+cd build-zirconium
+kas build ../colibri-imx7d.yml
+```
