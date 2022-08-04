@@ -17,7 +17,7 @@ repos:
 
   meta-zephyr:
     url: https://git.yoctoproject.org/git/meta-zephyr
-    refspec: kirkstone
+    refspec: master
     layers:
       meta-zephyr-core:
       meta-zephyr-bsp:
